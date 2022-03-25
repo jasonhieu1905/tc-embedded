@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Template Chooser Embedded - Demo App</title>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+      integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="/tc-embedded.js"></script>
+  </head>
+  <body class="ms-Fabric" dir="ltr">
+    <section class="container">
+      <div class="ms-Grid">
+        <div class="ms-Grid-row title">
+          <span class="ms-Grid-col ms-fontSize-24 ms-fontWeight-bold"
+            >Template Chooser Embedded - Demo App</span
+          >
+        </div>
+        <div class="ms-Grid-row">
+          <div class="ms-Grid-col ms-sm12 ms-md12 ms-lg7">
+            <div id="query-parameter">
+              <span class="ms-fontSize-16 ms-fontWeight-bold"
+                >Query parameters</span
+              >
+              <hr />
+              <span class="ms-fontSize-16 ms-fontWeight-regular"
+                >Configure the parameter that are used to launch the Template
+                Chooser Embedded experience.</span
+              >
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular ms-fontSize-16"
+                  for="template"
+                >
+                  Template
+                </label>
+                <textarea
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                  id="template"
+                  type="text"
+                  rows="8"
+                  cols="50"
+                  value=""
+                ></textarea>
+              </div>
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular ms-fontSize-16"
+                  for="upload-url"
+                >
+                  UploadUrl
+                </label>
+                <input
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                  id="upload-url"
+                  type="text"
+                />
+              </div>
+              <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-sm12 ms-md3 ms-lg3"></div>
+                <button
+                  id="reload-tc"
+                  class="btn ms-sm12 ms-md3 ms-lg3 ms-bgColor-themePrimary ms-fontColor-white"
+                >
+                  Reload Template Chooser
+                </button>
+                <button
+                  id="copy-tc-url"
+                  class="btn ms-sm12 ms-md5 ms-lg5 ms-bgColor-neutralTertiary ms-fontColor-white"
+                >
+                  Copy Template Chooser EmbeddedURL
+                </button>
+              </div>
+            </div>
+
+            <div id="template-chooser-output" class="mt-40">
+              <span class="ms-fontSize-16 ms-fontWeight-bold"
+                >Template Chooser output</span
+              >
+              <hr />
+              <span class="ms-fontSize-16"
+                >See what status information the Template Chooser embedded
+                returns. Also download the new document created by the Template
+                Chooser embedded experience.</span
+              >
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular"
+                  for="status"
+                >
+                  Status
+                </label>
+                <div
+                  id="status"
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                ></div>
+              </div>
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular"
+                  for="result-file"
+                >
+                  Result file
+                </label>
+                <a
+                  id="result-file"
+                  href="JavaScript:void(0);"
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                ></a>
+              </div>
+            </div>
+
+            <div id="resources" class="mt-40">
+              <span class="ms-fontSize-16 ms-fontWeight-bold">Resources</span>
+              <hr />
+              <span class="ms-fontSize-16 ms-fontWeight-regular"
+                >Learn more about the Template Chooser Embedded Experience</span
+              >
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular"
+                  for="documentation"
+                >
+                  Documentation
+                </label>
+                <a
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                  target="_blank"
+                  href="https://links.officeatwork.com/templatechooser-documentation"
+                  >docs.officeatwork.com</a
+                >
+              </div>
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular"
+                  for="helpCenter"
+                >
+                  Help Center
+                </label>
+                <a
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                  target="_blank"
+                  href="https://links.officeatwork.com/apps-help"
+                  >help.officeatwork.com</a
+                >
+              </div>
+              <div class="ms-Grid-row">
+                <label
+                  class="ms-Grid-col ms-sm12 ms-md3 ms-lg3 ms-fontWeight-regular"
+                  for="bookDemo"
+                >
+                  Book a demo
+                </label>
+                <a
+                  class="ms-Grid-col ms-sm12 ms-md9 ms-lg9"
+                  target="_blank"
+                  href="https://links.officeatwork.com/templatechooser-demo-embedded"
+                  >Template Chooser Embedded Demo</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="ms-Grid-col ms-sm12 ms-md12 ms-lg1"></div>
+          <div class="ms-Grid-col ms-sm12 ms-md12 ms-lg4">
+            <span class="ms-fontSize-24 ms-fontWeight-bold"
+              >Template Chooser Embedded</span
+            >
+            <br />
+            <span class="ms-fontSize-16"
+              >Experience how the Template Chooser Embedded cold provide access
+              to templates in your own application.</span
+            >
+            <br />
+            <div class="iframe-container">
+              <iframe
+                name="templateChooserFrame"
+                sandbox="allow-same-origin allow-popups allow-scripts allow-forms"
+                src="https://local.officeatwork365.com:9000/index.html#/template-chooser-browser-embedded"
+              >
+              </iframe>
+              <br />
+            </div>
+            <input
+              id="tc-input-url"
+              readonly
+              class="tc-input-url"
+              type="text"
+              value="https://template-chooser-embedded.officeatwork.com"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
